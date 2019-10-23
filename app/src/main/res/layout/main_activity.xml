@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/ui_spacing_16">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/ui_textview_heading_1_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="TALk" />
+
+    <TextView
+        android:id="@+id/subtitle"
+        style="@style/ui_textview_normal_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:gravity="center"
+        android:text="Connect with coworkers" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <!-- AREAS -->
+        <RelativeLayout
+            android:id="@+id/areas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/center">
+
+            <ImageView
+                android:id="@+id/areas_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:background="#CCC" />
+
+            <TextView
+                style="@style/ui_textview_large_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/areas_image"
+                android:layout_marginTop="@dimen/ui_spacing_8"
+                android:gravity="center"
+                android:text="Areas" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/center"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_centerInParent="true" />
+
+        <!-- SQUADS -->
+        <RelativeLayout
+            android:id="@+id/squads"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/center">
+
+            <ImageView
+                android:id="@+id/squads_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:background="#CCC" />
+
+            <TextView
+                style="@style/ui_textview_large_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/squads_image"
+                android:layout_marginTop="@dimen/ui_spacing_8"
+                android:gravity="center"
+                android:text="Squads" />
+        </RelativeLayout>
+
+        <!-- CHAPTERS -->
+        <RelativeLayout
+            android:id="@+id/chapters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/areas"
+            android:layout_marginTop="@dimen/ui_spacing_16"
+            android:layout_toStartOf="@+id/center">
+
+            <ImageView
+                android:id="@+id/chapters_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:background="#CCC" />
+
+            <TextView
+                style="@style/ui_textview_large_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/chapters_image"
+                android:layout_marginTop="@dimen/ui_spacing_8"
+                android:gravity="center"
+                android:text="Chapters" />
+        </RelativeLayout>
+
+        <!-- MY PROFILE -->
+        <RelativeLayout
+            android:id="@+id/my_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/squads"
+            android:layout_marginTop="@dimen/ui_spacing_16"
+            android:layout_toEndOf="@+id/center">
+
+            <ImageView
+                android:id="@+id/my_profile_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:background="#CCC" />
+
+            <TextView
+                style="@style/ui_textview_large_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/my_profile_image"
+                android:layout_marginTop="@dimen/ui_spacing_8"
+                android:gravity="center"
+                android:text="My Profile" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

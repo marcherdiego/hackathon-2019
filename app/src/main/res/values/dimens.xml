@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_height">300dp</dimen>
+    <dimen name="toolbar_offset_start">50dp</dimen>
+    <dimen name="toolbar_offset_top">30dp</dimen>
+    <dimen name="toolbar_image_offset_top">40dp</dimen>
+    <dimen name="toolbar_collapsed_height">90dp</dimen>
+</resources>
