@@ -28,23 +28,14 @@ class UserProfile : Serializable {
     @SerializedName("time_zone")
     var timeZone: String? = "GMT -3"
 
-    @SerializedName("current_squad_id")
-    var currentSquadId: Int? = null
-
-    @SerializedName("current_squad")
-    var currentSquad: String? = null
-
-    @SerializedName("chapter_id")
-    var chapterId: Int? = null
+    @SerializedName("squad")
+    var squad: Squad? = null
 
     @SerializedName("chapter")
-    var chapter: String? = null
+    var chapter: Chapter? = null
 
-    @SerializedName("user_leader_id")
-    var userLeaderId: Int? = null
-
-    @SerializedName("user_leader")
-    var userLeader: String? = null
+    @SerializedName("leader")
+    var userLeader: UserProfile? = null
 
     @SerializedName("slack_handle")
     var slackUser: String? = null

@@ -26,9 +26,9 @@ class UserProfilePresenter(view: UserProfileView, model: UserProfileModel) :
                 location,
                 timeZone,
                 model.getUserLocalTime(),
-                currentSquad,
-                chapter,
-                userLeader,
+                squad?.name,
+                chapter?.name,
+                userLeader?.getDisplayName(),
                 slackUser
             )
         }
