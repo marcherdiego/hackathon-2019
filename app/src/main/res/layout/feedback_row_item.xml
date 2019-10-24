@@ -7,6 +7,7 @@
 
     <TextView
         android:id="@+id/type_label"
+        style="@style/ui_textview_normal_black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Receiver"
@@ -14,9 +15,11 @@
 
     <TextView
         android:id="@+id/type_owner"
+        style="@style/ui_textview_normal_black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/type_label"
+        android:textStyle="bold"
         tools:text="Pablo Cerveñansky" />
 
     <TextView

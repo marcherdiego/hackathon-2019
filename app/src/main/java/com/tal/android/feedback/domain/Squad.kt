@@ -10,7 +10,7 @@ class Squad : Serializable {
     @SerializedName("name")
     val name: String? = null
 
-    @SerializedName("image_url")
+    @SerializedName("picture_url")
     val imageUrl: String? = null
 
     @SerializedName("product_owner")

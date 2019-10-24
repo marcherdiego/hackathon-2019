@@ -36,7 +36,7 @@ class FeedbackAdapter(
         holder.feedbackText.text = feedback.text
         holder.feedbackRating.rating = feedback.rating?.toFloat() ?: 0f
         holder.itemView.setOnClickListener {
-            bus.post(FeedbackClickedEvent(feedback.id))
+            bus.post(FeedbackClickedEvent(feedback))
         }
     }
 
@@ -47,7 +47,7 @@ class FeedbackAdapter(
         val feedbackRating: RatingBar = view.findViewById(R.id.feedback_rating)
     }
 
-    class FeedbackClickedEvent(val feedbackId: Int?)
+    class FeedbackClickedEvent(val feedback: Feedback)
 
     companion object {
         const val TYPE_SENT = "To"
