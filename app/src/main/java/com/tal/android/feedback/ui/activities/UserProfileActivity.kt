@@ -3,7 +3,8 @@ package com.tal.android.feedback.ui.activities
 import android.os.Bundle
 
 import com.nerdscorner.mvplib.events.activity.BaseActivity
-import com.ntal.android.feedback.R
+import com.tal.android.feedback.R
+import com.tal.android.feedback.domain.UserProfile
 
 import com.tal.android.feedback.ui.mvp.model.UserProfileModel
 import com.tal.android.feedback.ui.mvp.presenter.UserProfilePresenter
@@ -14,9 +15,10 @@ class UserProfileActivity : BaseActivity<UserProfilePresenter>() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.user_profile_activity)
 
+        val userProfile = UserProfile()
         presenter = UserProfilePresenter(
             UserProfileView(this),
-            UserProfileModel()
+            UserProfileModel(userProfile)
         )
     }
 

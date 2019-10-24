@@ -3,7 +3,7 @@ package com.tal.android.feedback.ui.activities
 import android.os.Bundle
 
 import com.nerdscorner.mvplib.events.activity.BaseActivity
-import com.ntal.android.feedback.R
+import com.tal.android.feedback.R
 
 import com.tal.android.feedback.ui.mvp.model.MainModel
 import com.tal.android.feedback.ui.mvp.presenter.MainPresenter

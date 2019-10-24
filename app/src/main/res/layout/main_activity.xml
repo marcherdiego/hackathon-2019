@@ -38,7 +38,9 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_centerHorizontal="true"
-                android:background="#CCC" />
+                android:background="?attr/selectableItemBackground"
+                android:padding="@dimen/ui_spacing_32"
+                android:src="@drawable/ic_areas" />
 
             <TextView
                 style="@style/ui_textview_large_black"
@@ -68,7 +70,9 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_centerHorizontal="true"
-                android:background="#CCC" />
+                android:background="?attr/selectableItemBackground"
+                android:padding="@dimen/ui_spacing_32"
+                android:src="@drawable/ic_squad" />
 
             <TextView
                 style="@style/ui_textview_large_black"
@@ -94,7 +98,9 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_centerHorizontal="true"
-                android:background="#CCC" />
+                android:background="?attr/selectableItemBackground"
+                android:padding="@dimen/ui_spacing_32"
+                android:src="@drawable/ic_chapter" />
 
             <TextView
                 style="@style/ui_textview_large_black"
@@ -120,7 +126,9 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_centerHorizontal="true"
-                android:background="#CCC" />
+                android:background="?attr/selectableItemBackground"
+                android:padding="@dimen/ui_spacing_32"
+                android:src="@drawable/ic_profile" />
 
             <TextView
                 style="@style/ui_textview_large_black"

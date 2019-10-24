@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/ui_spacing_8">
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/ui_textview_heading_3_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        tools:text="Core" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        tools:text="Brief description of what the squad does" />
+
+    <TextView
+        android:id="@+id/product_owner_label"
+        style="@style/ui_textview_large_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description"
+        android:layout_alignParentEnd="true"
+        android:text="Product owner" />
+
+    <TextView
+        android:id="@+id/product_owner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_owner_label"
+        android:layout_alignLeft="@+id/product_owner_label"
+        android:layout_alignParentEnd="true"
+        tools:text="Reed Wilson" />
+
+    <TextView
+        android:id="@+id/scrum_master_label"
+        style="@style/ui_textview_large_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description"
+        android:text="Scrum master" />
+
+    <TextView
+        android:id="@+id/scrum_master"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scrum_master_label"
+        tools:text="Javier González" />
+
+</RelativeLayout>

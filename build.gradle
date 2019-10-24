@@ -30,4 +30,7 @@ task clean(type: Delete) {
 ext {
     networkingVersion = '2.+'
     uiVersion = "2.+"
+    stethoVersion = "1.4.2"
+    okhttpVersion = "3.10.0"
+    retrofitVersion = "2.4.0"
 }

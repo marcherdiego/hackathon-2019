@@ -7,12 +7,13 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.ntal.android.feedback"
+        applicationId "com.tal.android.feedback"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("int", "READ_TIMEOUT_SECONDS", "10")
+        buildConfigField("int", "CONNECT_TIMEOUT_SECONDS", "10")
     }
     buildTypes {
         release {
@@ -48,7 +49,15 @@ android {
 
 dependencies {
     implementation("com.tal.android.ui:core:$uiVersion")
-    implementation("com.tal.android.networking:core:$networkingVersion")
+    api("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    api("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+
+    api("com.facebook.stetho:stetho:$stethoVersion")
+    api("com.facebook.stetho:stetho-okhttp3:$stethoVersion")
+
+    api("com.squareup.okhttp3:logging-interceptor:$okhttpVersion")
+    api("com.squareup.okhttp3:okhttp:$okhttpVersion")
+    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 

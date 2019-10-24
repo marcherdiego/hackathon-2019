@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/job_title_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/ui_spacing_8">
+
+        <TextView
+            android:id="@+id/job_title_label"
+            style="@style/ui_textview_large_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Position"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/job_title"
+            style="@style/ui_textview_normal_regular_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/job_title_label"
+            android:text="Backend developer" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/chapter_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/job_title_container"
+        android:layout_marginTop="@dimen/ui_spacing_8"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/ui_spacing_8">
+
+        <TextView
+            android:id="@+id/chapter_label"
+            style="@style/ui_textview_large_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chapter"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/chapter"
+            style="@style/ui_textview_normal_regular_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chapter_label"
+            tools:text="Backend" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/squad_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/job_title_container"
+        android:layout_marginStart="@dimen/ui_spacing_8"
+        android:layout_marginTop="@dimen/ui_spacing_8"
+        android:layout_toEndOf="@+id/chapter_container"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/ui_spacing_8">
+
+        <TextView
+            android:id="@+id/squad_label"
+            style="@style/ui_textview_large_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Squad"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/squad"
+            style="@style/ui_textview_normal_regular_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/squad_label"
+            tools:text="Details" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/email_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chapter_container"
+        android:layout_marginTop="@dimen/ui_spacing_8"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/ui_spacing_8">
+
+        <TextView
+            android:id="@+id/email_label"
+            style="@style/ui_textview_large_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/email"
+            style="@style/ui_textview_normal_regular_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/email_label"
+            tools:text="panadero@theappraisallane.com" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/location_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email_container"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="@dimen/ui_spacing_8"
+        android:layout_toStartOf="@+id/timezone_container"
+        android:padding="@dimen/ui_spacing_8">
+
+        <TextView
+            android:id="@+id/location_label"
+            style="@style/ui_textview_large_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/location"
+            style="@style/ui_textview_normal_regular_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/location_label"
+            tools:text="Uruguay (Montevideo)" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/timezone_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email_container"
+        android:layout_marginStart="@dimen/ui_spacing_16"
+        android:layout_marginTop="@dimen/ui_spacing_8"
+        android:layout_marginEnd="@dimen/ui_spacing_8"
+        android:layout_toStartOf="@+id/local_time_container"
+        android:padding="@dimen/ui_spacing_8">
+
+        <TextView
+            android:id="@+id/timezone_label"
+            style="@style/ui_textview_large_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Timezone"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/timezone"
+            style="@style/ui_textview_normal_regular_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timezone_label"
+            tools:text="GMT -3" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/local_time_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email_container"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/ui_spacing_8"
+        android:padding="@dimen/ui_spacing_8">
+
+        <TextView
+            android:id="@+id/local_time_label"
+            style="@style/ui_textview_large_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Local time"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/local_time"
+            style="@style/ui_textview_normal_regular_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/local_time_label"
+            tools:text="08:45 PM" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/leader_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location_container"
+        android:layout_marginTop="@dimen/ui_spacing_8"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/ui_spacing_8">
+
+        <TextView
+            android:id="@+id/leader_label"
+            style="@style/ui_textview_large_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reports to"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/leader"
+            style="@style/ui_textview_normal_regular_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/leader_label"
+            tools:text="Christian Schmeichel" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/slack_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/leader_container"
+        android:layout_marginTop="@dimen/ui_spacing_8"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/ui_spacing_8">
+
+        <RelativeLayout
+            android:id="@+id/slack_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/slack_label"
+                style="@style/ui_textview_large_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Slack user"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/slack"
+                style="@style/ui_textview_normal_regular_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/slack_label"
+                tools:text="\@panaderoveni" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/ui_spacing_8"
+            android:layout_toEndOf="@+id/slack_data"
+            android:padding="10dp"
+            android:src="@drawable/ic_external_link_symbol" />
+    </RelativeLayout>
+</RelativeLayout>

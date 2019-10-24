@@ -12,6 +12,10 @@
         <item name="android:textColor">@color/ui_color_white</item>
     </style>
 
+    <style name="expandedToolbarLayoutTitleColor" parent="AppTheme">
+        <item name="android:textColor">@color/ui_color_white</item>
+    </style>
+
     <style name="FabStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
