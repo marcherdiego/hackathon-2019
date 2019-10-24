@@ -5,50 +5,50 @@ import java.io.Serializable
 
 class UserProfile : Serializable {
     @SerializedName("id")
-    val id: Int? = null
+    var id: Int? = null
 
     @SerializedName("email")
-    val email: String? = "jgonzalez@theappraisallane.com"
+    var email: String? = "jgonzalez@theappraisallane.com"
 
     @SerializedName("first_name")
-    val firstName: String? = "Javier"
+    var firstName: String? = "Javier"
 
     @SerializedName("last_name")
-    val lastName: String? = "González"
+    var lastName: String? = "González"
 
     @SerializedName("position")
-    val position: String? = "Backend developer"
+    var position: String? = "Backend developer"
 
     @SerializedName("picture")
-    val pictureUrl: String? =
+    var pictureUrl: String? =
         "https://imagizer.imageshack.com/v2/100x75q90/921/CZe5QU.jpg"
 
     @SerializedName("location")
-    val location: String? = "Montevideo, Uruguay"
+    var location: String? = "Montevideo, Uruguay"
 
     @SerializedName("time_zone")
-    val timeZone: String? = "GMT -3"
+    var timeZone: String? = "GMT -3"
 
     @SerializedName("current_squad_id")
-    val currentSquadId: Int? = null
+    var currentSquadId: Int? = null
 
     @SerializedName("current_squad")
-    val currentSquad: String? = "Details"
+    var currentSquad: String? = "Details"
 
     @SerializedName("chapter_id")
-    val chapterId: Int? = null
+    var chapterId: Int? = null
 
     @SerializedName("chapter")
-    val chapter: String? = "Backend"
+    var chapter: String? = "Backend"
 
     @SerializedName("user_leader_id")
-    val userLeaderId: Int? = null
+    var userLeaderId: Int? = null
 
     @SerializedName("user_leader")
-    val userLeader: String? = "Christian Schmeichel"
+    var userLeader: String? = "Christian Schmeichel"
 
     @SerializedName("slack_handle")
-    val slackUser: String? = "DCLE3NCLV"
+    var slackUser: String? = "DCLE3NCLV"
 
     fun getDisplayName() = "${firstName?.capitalize()} ${lastName?.capitalize()}"
 }

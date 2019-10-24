@@ -1,7 +1,7 @@
 package com.tal.android.feedback.ui.mvp.model
 
 import com.nerdscorner.mvplib.events.model.BaseEventsModel
-import com.tal.android.feedback.domain.Squad
+import com.tal.android.feedback.domain.UserProfile
 import com.tal.android.feedback.network.ServiceGenerator
 import com.tal.android.feedback.network.extensions.enqueueResponseNotNull
 import com.tal.android.feedback.network.extensions.noCache
@@ -19,7 +19,21 @@ class SquadDetailModel(private val squadId: Int) : BaseEventsModel() {
                     if (it.squad == null) {
                         bus.post(SquadFetchFailedEvent())
                     } else {
-                        bus.post(SquadFetchedSuccessfullyEvent(it.squad))
+                        bus.post(SquadFetchedSuccessfullyEvent(
+                            mutableListOf<UserProfile>().apply {
+                                it.squad.productOwner?.let { productOwner ->
+                                    productOwner.position = "Product Owner"
+                                    add(productOwner)
+                                }
+                                it.squad.scrumMaster?.let { scrumMaster ->
+                                    scrumMaster.position = "Scrum Master"
+                                    add(scrumMaster)
+                                }
+                                it.squad.members?.let { members ->
+                                    addAll(members)
+                                }
+                            }
+                        ))
                     }
                 },
                 fail = {
@@ -28,6 +42,6 @@ class SquadDetailModel(private val squadId: Int) : BaseEventsModel() {
             )
     }
 
-    class SquadFetchedSuccessfullyEvent(val squad: Squad)
+    class SquadFetchedSuccessfullyEvent(val squadMembers: List<UserProfile>)
     class SquadFetchFailedEvent(val error: String? = null)
 }

@@ -12,7 +12,7 @@ class SquadDetailPresenter(view: SquadDetailView, model: SquadDetailModel) :
 
     @Subscribe
     fun onSquadFetchedSuccessfully(event: SquadDetailModel.SquadFetchedSuccessfullyEvent) {
-        view.setSquadMembersAdapter(SquadMembersAdapter(listOf()))
+        view.setSquadMembersAdapter(SquadMembersAdapter(event.squadMembers))
     }
 
     override fun onResume() {
