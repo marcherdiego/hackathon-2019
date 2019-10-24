@@ -1,7 +1,7 @@
 package com.tal.android.feedback.ui.mvp.model
 
 import com.nerdscorner.mvplib.events.model.BaseEventsModel
-import com.tal.android.feedback.domain.Constants
+import com.tal.android.feedback.Constants
 import com.tal.android.feedback.domain.UserProfile
 import com.tal.android.feedback.network.ServiceGenerator
 import com.tal.android.feedback.network.extensions.enqueueResponseNotNull
