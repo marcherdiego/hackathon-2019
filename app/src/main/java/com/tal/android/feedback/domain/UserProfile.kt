@@ -21,7 +21,7 @@ class UserProfile : Serializable {
 
     @SerializedName("picture")
     val pictureUrl: String? =
-        "https://media.moddb.com/cache/images/groups/1/3/2055/thumb_620x2000/TauHelmet.jpg"
+        "https://imagizer.imageshack.com/v2/100x75q90/921/CZe5QU.jpg"
 
     @SerializedName("location")
     val location: String? = "Montevideo, Uruguay"

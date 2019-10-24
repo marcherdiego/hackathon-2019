@@ -1,14 +1,16 @@
-package com.tal.android.feedback.network.services
+package com.tal.android.feedback
 
 import android.app.Application
+import com.squareup.picasso.Picasso
 import com.tal.android.configurators.Configurator
 import com.tal.android.configurators.ConfiguratorManager
-import com.tal.android.feedback.BuildConfig
 import com.tal.android.feedback.network.NetworkingConfigurator
 
 class Application : Application() {
     override fun onCreate() {
         super.onCreate()
+
+        Picasso.get().isLoggingEnabled = true
 
         val config = HashMap<String, Any?>()
         config[Configurator.DEBUG_MODE] = BuildConfig.DEBUG

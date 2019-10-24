@@ -16,6 +16,9 @@ class Squad : Serializable {
     @SerializedName("scrum_master")
     val scrumMaster: UserProfile? = null
 
+    @SerializedName("members")
+    val members: List<UserProfile>? = null
+
     @SerializedName("description")
     val description: String? = null
 }

@@ -1,10 +1,15 @@
 package com.tal.android.feedback.network.services
 
-import com.tal.android.feedback.domain.Squad
+import com.tal.android.feedback.domain.SquadWrapper
+import com.tal.android.feedback.domain.SquadsWrapper
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface SquadsService {
     @GET("/squads")
-    fun listSquads(): Call<List<Squad>>
+    fun listSquads(): Call<SquadsWrapper>
+
+    @GET("/squads/{id}")
+    fun getSquadById(@Path("id") id: Int): Call<SquadWrapper>
 }

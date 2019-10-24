@@ -7,27 +7,27 @@ import com.tal.android.feedback.network.extensions.enqueueResponseNotNull
 import com.tal.android.feedback.network.extensions.noCache
 import com.tal.android.feedback.network.services.SquadsService
 
-class SquadsListModel : BaseEventsModel() {
+class SquadDetailModel(private val squadId: Int) : BaseEventsModel() {
     private val squadsService = ServiceGenerator.createServiceBundle(SquadsService::class.java)
 
-    fun fetchSquads() {
+    fun fetchSquadMembers() {
         squadsService
             .noCache()
-            .listSquads()
+            .getSquadById(squadId)
             .enqueueResponseNotNull(
                 success = {
-                    if (it.squads == null) {
-                        bus.post(SquadsFetchFailedEvent())
+                    if (it.squad == null) {
+                        bus.post(SquadFetchFailedEvent())
                     } else {
-                        bus.post(SquadsFetchedSuccessfullyEvent(it.squads))
+                        bus.post(SquadFetchedSuccessfullyEvent(it.squad))
                     }
                 },
                 fail = {
-                    bus.post(SquadsFetchFailedEvent(it.errorBody))
+                    bus.post(SquadFetchFailedEvent(it.errorBody))
                 }
             )
     }
 
-    class SquadsFetchedSuccessfullyEvent(val squads: List<Squad>)
-    class SquadsFetchFailedEvent(val errorBody: String? = null)
+    class SquadFetchedSuccessfullyEvent(val squad: Squad)
+    class SquadFetchFailedEvent(val error: String? = null)
 }

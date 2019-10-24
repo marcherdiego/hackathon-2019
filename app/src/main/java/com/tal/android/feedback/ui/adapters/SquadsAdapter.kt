@@ -5,10 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.nerdscorner.mvplib.events.bus.Bus
 import com.tal.android.feedback.R
 import com.tal.android.feedback.domain.Squad
 
-class SquadsAdapter(private val squads: List<Squad>) :
+class SquadsAdapter(private val squads: List<Squad>, private val bus: Bus) :
     RecyclerView.Adapter<SquadsAdapter.SquadsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SquadsViewHolder {
@@ -25,6 +26,9 @@ class SquadsAdapter(private val squads: List<Squad>) :
         holder.productOwner.text = squad.productOwner?.getDisplayName()
         holder.scrumMaster.text = squad.scrumMaster?.getDisplayName()
         holder.description.text = squad.description
+        holder.itemView.setOnClickListener {
+            bus.post(SquadClickedEvent(squad.id))
+        }
     }
 
     class SquadsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -33,4 +37,6 @@ class SquadsAdapter(private val squads: List<Squad>) :
         val scrumMaster: TextView = view.findViewById(R.id.scrum_master)
         val description: TextView = view.findViewById(R.id.description)
     }
+
+    class SquadClickedEvent(val squadId: Int?)
 }
