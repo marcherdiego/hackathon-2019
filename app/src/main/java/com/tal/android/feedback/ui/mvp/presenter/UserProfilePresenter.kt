@@ -12,11 +12,12 @@ class UserProfilePresenter(view: UserProfileView, model: UserProfileModel) :
     BaseActivityPresenter<UserProfileView, UserProfileModel>(view, model) {
 
     init {
-        if (model.isMyUser()) {
-            //If it's my profile, hide the FAB
-            view.hideFab()
-        }
-        with(model.userProfile) {
+        view.hideFab()
+    }
+
+    @Subscribe
+    fun onUserFetchedSuccessfully(event: UserProfileModel.UserFetchedSuccessfullyEvent) {
+        with(event.userProfile) {
             view.loadUserData(
                 email,
                 getDisplayName(),
@@ -30,6 +31,10 @@ class UserProfilePresenter(view: UserProfileView, model: UserProfileModel) :
                 userLeader,
                 slackUser
             )
+        }
+        if (model.isMyUser().not()) {
+            //If it's not my profile, show the FAB
+            view.showFab()
         }
     }
 
@@ -58,8 +63,13 @@ class UserProfilePresenter(view: UserProfileView, model: UserProfileModel) :
         view.activity?.startActivity(
             Intent(
                 Intent.ACTION_VIEW,
-                Uri.parse(UserProfileModel.SLACK_PROFILE_ADDRESS + model.userProfile.slackUser)
+                Uri.parse(UserProfileModel.SLACK_PROFILE_ADDRESS + model.userProfile?.slackUser)
             ).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         )
+    }
+
+    override fun onResume() {
+        super.onResume()
+        model.fetchUserData()
     }
 }

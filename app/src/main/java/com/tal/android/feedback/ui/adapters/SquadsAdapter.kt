@@ -25,7 +25,11 @@ class SquadsAdapter(private val squads: List<Squad>, private val bus: Bus) :
         holder.name.text = squad.name
         holder.productOwner.text = squad.productOwner?.getDisplayName()
         holder.scrumMaster.text = squad.scrumMaster?.getDisplayName()
-        holder.description.text = squad.description
+        if (squad.description.isNullOrBlank()) {
+            holder.description.visibility = View.GONE
+        } else {
+            holder.description.text = squad.description
+        }
         holder.itemView.setOnClickListener {
             bus.post(SquadClickedEvent(squad.id))
         }

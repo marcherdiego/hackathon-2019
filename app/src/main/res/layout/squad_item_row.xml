@@ -3,11 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="@dimen/ui_spacing_8">
+    android:paddingTop="@dimen/ui_spacing_8"
+    android:paddingBottom="@dimen/ui_spacing_8"
+    android:paddingStart="@dimen/ui_spacing_16"
+    android:paddingEnd="@dimen/ui_spacing_16">
 
     <TextView
         android:id="@+id/name"
-        style="@style/ui_textview_heading_3_black"
+        style="@style/ui_textview_heading_1_black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"

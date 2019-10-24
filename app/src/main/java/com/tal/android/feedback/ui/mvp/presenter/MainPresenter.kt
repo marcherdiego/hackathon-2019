@@ -17,7 +17,7 @@ class MainPresenter(view: MainView, model: MainModel) :
         view.activity?.let {
             it.startActivity(
                 Intent(it, UserProfileActivity::class.java)
-                    .putExtra(UserProfileActivity.USER_PROFILE, model.myProfile)
+                    .putExtra(UserProfileActivity.USER_ID, 1)
             )
         }
     }

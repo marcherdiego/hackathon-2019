@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
-                app:title="Panadero González" />
+                app:title=" " />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -60,6 +60,9 @@
         android:id="@+id/fab"
         style="@style/FabStyle"
         android:layout_marginRight="@dimen/ui_spacing_16"
+        android:src="@drawable/ic_feedback"
+        android:tint="@color/ui_color_white"
+        app:fabSize="auto"
         app:layout_anchor="@id/app_bar_layout"
         app:layout_anchorGravity="bottom|right|end" />
 

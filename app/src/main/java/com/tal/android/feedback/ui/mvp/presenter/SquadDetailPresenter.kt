@@ -1,6 +1,8 @@
 package com.tal.android.feedback.ui.mvp.presenter
 
+import android.content.Intent
 import com.nerdscorner.mvplib.events.presenter.BaseActivityPresenter
+import com.tal.android.feedback.ui.activities.UserProfileActivity
 import com.tal.android.feedback.ui.adapters.SquadMembersAdapter
 
 import com.tal.android.feedback.ui.mvp.model.SquadDetailModel
@@ -16,7 +18,17 @@ class SquadDetailPresenter(view: SquadDetailView, model: SquadDetailModel) :
             "Squad ${event.squadName}",
             event.squadImageUrl
         )
-        view.setSquadMembersAdapter(SquadMembersAdapter(event.squadMembers))
+        view.setSquadMembersAdapter(SquadMembersAdapter(event.squadMembers, model.getBus()))
+    }
+
+    @Subscribe
+    fun onSquadMemberClicked(event: SquadMembersAdapter.SquadMemberClickedEvent) {
+        view.activity?.let {
+            it.startActivity(
+                Intent(it, UserProfileActivity::class.java)
+                    .putExtra(UserProfileActivity.USER_ID, event.memberId)
+            )
+        }
     }
 
     override fun onResume() {

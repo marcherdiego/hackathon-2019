@@ -8,20 +8,19 @@ class UserProfile : Serializable {
     var id: Int? = null
 
     @SerializedName("email")
-    var email: String? = "jgonzalez@theappraisallane.com"
+    var email: String? = null
 
     @SerializedName("first_name")
-    var firstName: String? = "Javier"
+    var firstName: String? = null
 
     @SerializedName("last_name")
-    var lastName: String? = "González"
+    var lastName: String? = null
 
     @SerializedName("position")
-    var position: String? = "Backend developer"
+    var position: String? = null
 
     @SerializedName("picture_url")
-    var pictureUrl: String? =
-        "https://imagizer.imageshack.com/v2/100x75q90/921/CZe5QU.jpg"
+    var pictureUrl: String? = null
 
     @SerializedName("location")
     var location: String? = "Montevideo, Uruguay"
@@ -33,22 +32,22 @@ class UserProfile : Serializable {
     var currentSquadId: Int? = null
 
     @SerializedName("current_squad")
-    var currentSquad: String? = "Details"
+    var currentSquad: String? = null
 
     @SerializedName("chapter_id")
     var chapterId: Int? = null
 
     @SerializedName("chapter")
-    var chapter: String? = "Backend"
+    var chapter: String? = null
 
     @SerializedName("user_leader_id")
     var userLeaderId: Int? = null
 
     @SerializedName("user_leader")
-    var userLeader: String? = "Christian Schmeichel"
+    var userLeader: String? = null
 
     @SerializedName("slack_handle")
-    var slackUser: String? = "DCLE3NCLV"
+    var slackUser: String? = null
 
     fun getDisplayName() = "${firstName?.capitalize()} ${lastName?.capitalize()}"
 }
