@@ -13,8 +13,12 @@ class MainView(activity: BaseActivity<*>) : BaseActivityView(activity) {
         activity.findViewById<View>(R.id.squads).setOnClickListener {
             bus.post(SquadsClickedEvent())
         }
+        activity.findViewById<View>(R.id.chapters).setOnClickListener {
+            bus.post(ChaptersClickedEvent())
+        }
     }
 
     class MyProfileClickedEvent
     class SquadsClickedEvent
+    class ChaptersClickedEvent
 }

@@ -12,8 +12,8 @@ import com.tal.android.feedback.R
 import com.tal.android.feedback.domain.UserProfile
 import com.tal.android.feedback.ui.picasso.CircleTransform
 
-class SquadMembersAdapter(private val squadMembers: List<UserProfile>, private val bus: Bus) :
-    RecyclerView.Adapter<SquadMembersAdapter.SquadsViewHolder>() {
+class ChapterMembersAdapter(private val chapterMembers: List<UserProfile>, private val bus: Bus) :
+    RecyclerView.Adapter<ChapterMembersAdapter.SquadsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SquadsViewHolder {
         return SquadsViewHolder(
@@ -29,10 +29,10 @@ class SquadMembersAdapter(private val squadMembers: List<UserProfile>, private v
         )
     }
 
-    override fun getItemCount() = (squadMembers.size - 1) / 2 + 2
+    override fun getItemCount() = chapterMembers.size / 2 + 1
 
     override fun getItemViewType(position: Int): Int {
-        return if (position == 0 || position == 1) {
+        return if (position == 0) {
             SINGLE_MEMBER_TYPE
         } else {
             DOUBLE_MEMBERS_TYPE
@@ -41,7 +41,7 @@ class SquadMembersAdapter(private val squadMembers: List<UserProfile>, private v
 
     override fun onBindViewHolder(holder: SquadsViewHolder, position: Int) {
         if (holder.itemViewType == SINGLE_MEMBER_TYPE) {
-            val member = squadMembers[position]
+            val member = chapterMembers[position]
             holder.role1.text = member.position
             holder.name1.text = member.getDisplayName()
             Picasso
@@ -50,12 +50,12 @@ class SquadMembersAdapter(private val squadMembers: List<UserProfile>, private v
                 .transform(CircleTransform())
                 .into(holder.image1)
             holder.user1.setOnClickListener {
-                bus.post(SquadMemberClickedEvent(member.id))
+                bus.post(ChapterMemberClickedEvent(member.id))
             }
         } else {
-            val firstPosition = 2 * (position - 1)
-            if (firstPosition < squadMembers.size) {
-                val member = squadMembers[firstPosition]
+            val firstPosition = 2 * position - 1
+            if (firstPosition < chapterMembers.size) {
+                val member = chapterMembers[firstPosition]
                 holder.role1.text = member.position
                 holder.name1.text = member.getDisplayName()
                 Picasso
@@ -64,12 +64,12 @@ class SquadMembersAdapter(private val squadMembers: List<UserProfile>, private v
                     .transform(CircleTransform())
                     .into(holder.image1)
                 holder.user1.setOnClickListener {
-                    bus.post(SquadMemberClickedEvent(member.id))
+                    bus.post(ChapterMemberClickedEvent(member.id))
                 }
 
                 val secondPosition = firstPosition + 1
-                if (secondPosition < squadMembers.size) {
-                    val member = squadMembers[secondPosition]
+                if (secondPosition < chapterMembers.size) {
+                    val member = chapterMembers[secondPosition]
                     holder.role2?.text = member.position
                     holder.name2?.text = member.getDisplayName()
                     Picasso
@@ -78,7 +78,7 @@ class SquadMembersAdapter(private val squadMembers: List<UserProfile>, private v
                         .transform(CircleTransform())
                         .into(holder.image2)
                     holder.user2?.setOnClickListener {
-                        bus.post(SquadMemberClickedEvent(member.id))
+                        bus.post(ChapterMemberClickedEvent(member.id))
                     }
                 }
             }
@@ -97,7 +97,7 @@ class SquadMembersAdapter(private val squadMembers: List<UserProfile>, private v
         val image2: ImageView? = view.findViewById(R.id.user_image_2)
     }
 
-    class SquadMemberClickedEvent(val memberId: Int?)
+    class ChapterMemberClickedEvent(val memberId: Int?)
 
     companion object {
         private const val SINGLE_MEMBER_TYPE = 1

@@ -1,7 +1,7 @@
 package com.tal.android.feedback.network.services
 
-import com.tal.android.feedback.domain.UserWrapper
-import com.tal.android.feedback.domain.UsersWrapper
+import com.tal.android.feedback.domain.wrappers.UserWrapper
+import com.tal.android.feedback.domain.wrappers.UsersWrapper
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

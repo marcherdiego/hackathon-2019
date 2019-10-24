@@ -9,4 +9,16 @@ class Chapter : Serializable {
 
     @SerializedName("name")
     var name: String? = null
+
+    @SerializedName("picture_url")
+    var imageUrl: String? = null
+
+    @SerializedName("description")
+    var description: String? = null
+
+    @SerializedName("leader")
+    var leader: UserProfile? = null
+
+    @SerializedName("members")
+    var members: List<UserProfile>? = null
 }

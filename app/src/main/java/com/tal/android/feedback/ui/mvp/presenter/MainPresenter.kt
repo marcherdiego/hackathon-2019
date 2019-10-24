@@ -2,6 +2,7 @@ package com.tal.android.feedback.ui.mvp.presenter
 
 import android.content.Intent
 import com.nerdscorner.mvplib.events.presenter.BaseActivityPresenter
+import com.tal.android.feedback.ui.activities.ChaptersListActivity
 import com.tal.android.feedback.ui.activities.SquadsListActivity
 import com.tal.android.feedback.ui.activities.UserProfileActivity
 
@@ -27,6 +28,15 @@ class MainPresenter(view: MainView, model: MainModel) :
         view.activity?.let {
             it.startActivity(
                 Intent(it, SquadsListActivity::class.java)
+            )
+        }
+    }
+
+    @Subscribe
+    fun onChaptersClicked(event: MainView.ChaptersClickedEvent) {
+        view.activity?.let {
+            it.startActivity(
+                Intent(it, ChaptersListActivity::class.java)
             )
         }
     }

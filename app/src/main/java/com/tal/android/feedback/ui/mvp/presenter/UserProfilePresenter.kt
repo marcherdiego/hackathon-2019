@@ -3,7 +3,7 @@ package com.tal.android.feedback.ui.mvp.presenter
 import android.content.Intent
 import android.net.Uri
 import com.nerdscorner.mvplib.events.presenter.BaseActivityPresenter
-import com.tal.android.feedback.ui.activities.ChapterDetailActivity
+import com.tal.android.feedback.ui.activities.ChapterDetailsActivity
 import com.tal.android.feedback.ui.activities.SquadDetailActivity
 import com.tal.android.feedback.ui.activities.UserProfileActivity
 import com.tal.android.feedback.ui.mvp.model.UserProfileModel
@@ -49,8 +49,8 @@ class UserProfilePresenter(view: UserProfileView, model: UserProfileModel) :
     fun onUserChapterClicked(event: UserProfileView.UserChapterClickedEvent) {
         view.activity?.let {
             it.startActivity(
-                Intent(it, ChapterDetailActivity::class.java)
-                    .putExtra(ChapterDetailActivity.CHAPTER_ID, model.userProfile?.chapter?.id)
+                Intent(it, ChapterDetailsActivity::class.java)
+                    .putExtra(ChapterDetailsActivity.CHAPTER_ID, model.userProfile?.chapter?.id)
             )
         }
     }

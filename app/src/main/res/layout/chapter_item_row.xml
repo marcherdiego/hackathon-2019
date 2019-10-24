@@ -3,18 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="@dimen/ui_spacing_8"
-    android:paddingBottom="@dimen/ui_spacing_8"
     android:paddingStart="@dimen/ui_spacing_16"
-    android:paddingEnd="@dimen/ui_spacing_16">
+    android:paddingTop="@dimen/ui_spacing_8"
+    android:paddingEnd="@dimen/ui_spacing_16"
+    android:paddingBottom="@dimen/ui_spacing_8">
+
+    <ImageView
+        android:id="@+id/chapter_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/ui_spacing_8"
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/name"
         style="@style/ui_textview_heading_1_black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/chapter_image"
         android:textStyle="bold"
-        tools:text="Core" />
+        tools:text="Android" />
 
     <TextView
         android:id="@+id/description"
@@ -23,38 +32,41 @@
         android:layout_below="@+id/name"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        tools:text="Brief description of what the squad does" />
+        android:layout_toEndOf="@+id/chapter_image"
+        tools:text="Brief description of what the chapter does" />
 
     <TextView
-        android:id="@+id/product_owner_label"
+        android:id="@+id/members_count_label"
         style="@style/ui_textview_large_black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/description"
         android:layout_alignParentEnd="true"
-        android:text="Product owner" />
+        android:text="Members" />
 
     <TextView
-        android:id="@+id/product_owner"
+        android:id="@+id/members_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/product_owner_label"
+        android:layout_below="@+id/members_count_label"
         android:layout_alignParentEnd="true"
-        tools:text="Reed Wilson" />
+        tools:text="4" />
 
     <TextView
-        android:id="@+id/scrum_master_label"
+        android:id="@+id/chapter_lead_label"
         style="@style/ui_textview_large_black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/description"
-        android:text="Scrum master" />
+        android:layout_toEndOf="@+id/chapter_image"
+        android:text="Chapter Lead" />
 
     <TextView
-        android:id="@+id/scrum_master"
+        android:id="@+id/chapter_lead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/scrum_master_label"
-        tools:text="Javier González" />
+        android:layout_below="@+id/chapter_lead_label"
+        android:layout_toEndOf="@+id/chapter_image"
+        tools:text="Diego Marcher" />
 
 </RelativeLayout>
