@@ -16,7 +16,7 @@ class ChapterDetailsPresenter(view: ChapterDetailsView, model: ChapterDetailsMod
     fun onChapterFetchedSuccessfully(event: ChapterDetailsModel.ChapterFetchedSuccessfullyEvent) {
         with(event.chapter) {
             view.loadChapterDetails(
-                name,
+                "Chapter $name",
                 imageUrl
             )
             view.setChapterMembersAdapter(ChapterMembersAdapter(event.members, model.getBus()))

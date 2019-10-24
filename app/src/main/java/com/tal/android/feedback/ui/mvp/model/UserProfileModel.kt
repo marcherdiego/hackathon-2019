@@ -7,6 +7,8 @@ import com.tal.android.feedback.network.ServiceGenerator
 import com.tal.android.feedback.network.extensions.enqueueResponseNotNull
 import com.tal.android.feedback.network.extensions.noCache
 import com.tal.android.feedback.network.services.UsersService
+import java.text.DateFormat
+import java.util.*
 
 class UserProfileModel(private val userId: Int) : BaseEventsModel() {
     private val usersService = ServiceGenerator.createServiceBundle(UsersService::class.java)
@@ -33,7 +35,7 @@ class UserProfileModel(private val userId: Int) : BaseEventsModel() {
             )
     }
 
-    fun getUserLocalTime() = "11:34 AM"
+    fun getUserLocalTime() = DateFormat.getTimeInstance(DateFormat.SHORT).format(Date())
 
     class UserFetchedSuccessfullyEvent(val userProfile: UserProfile)
     class UserFetchFailedException(val errorBody: String? = null)

@@ -64,7 +64,7 @@ class UserProfileView(activity: BaseActivity<*>) : BaseActivityView(activity) {
         currentSquad: String?,
         chapter: String?,
         userLeader: String?,
-        slackUser: String?
+        slackName: String?
     ) {
         this.collapsingToolbar.title = displayName
         this.jobTitle.text = position
@@ -75,7 +75,7 @@ class UserProfileView(activity: BaseActivity<*>) : BaseActivityView(activity) {
         this.currentSquad.text = currentSquad
         this.chapter.text = chapter
         this.userLeader.text = userLeader
-        this.slackUser.text = slackUser
+        this.slackUser.text = slackName
         Picasso
             .get()
             .load(pictureUrl)

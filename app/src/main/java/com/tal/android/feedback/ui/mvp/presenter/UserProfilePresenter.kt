@@ -32,7 +32,7 @@ class UserProfilePresenter(view: UserProfileView, model: UserProfileModel) :
                 squad?.name,
                 chapter?.name,
                 userLeader?.getDisplayName(),
-                slackUser
+                "@$slackName"
             )
         }
         if (model.isMyUser().not()) {

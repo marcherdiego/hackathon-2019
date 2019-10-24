@@ -37,8 +37,11 @@ class UserProfile : Serializable {
     @SerializedName("leader")
     var userLeader: UserProfile? = null
 
-    @SerializedName("slack_handle")
+    @SerializedName("slack_id")
     var slackUser: String? = null
+
+    @SerializedName("slack_name")
+    var slackName: String? = null
 
     fun getDisplayName() = "${firstName?.capitalize()} ${lastName?.capitalize()}"
 }
