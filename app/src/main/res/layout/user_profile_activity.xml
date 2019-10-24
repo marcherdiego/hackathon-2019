@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/personal_data"
                 android:layout_marginTop="@dimen/ui_spacing_16"
-                android:text="View Feedbacks" />
+                android:text="View my Feedback" />
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
 
