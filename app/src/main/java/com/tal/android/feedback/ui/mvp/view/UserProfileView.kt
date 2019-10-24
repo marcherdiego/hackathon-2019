@@ -43,6 +43,9 @@ class UserProfileView(activity: BaseActivity<*>) : BaseActivityView(activity) {
         activity.findViewById<View>(R.id.slack_container).setOnClickListener {
             bus.post(UserSlackClickedEvent())
         }
+        activity.findViewById<View>(R.id.feedbacks_button).setOnClickListener {
+            bus.post(ViewFeedbacksClickedEvent())
+        }
     }
 
     fun hideFab() {
@@ -88,4 +91,5 @@ class UserProfileView(activity: BaseActivity<*>) : BaseActivityView(activity) {
     class UserEmailClickedEvent
     class UserLeaderClickedEvent
     class UserSlackClickedEvent
+    class ViewFeedbacksClickedEvent
 }

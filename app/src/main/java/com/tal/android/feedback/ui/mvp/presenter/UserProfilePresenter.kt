@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import com.nerdscorner.mvplib.events.presenter.BaseActivityPresenter
 import com.tal.android.feedback.ui.activities.ChapterDetailsActivity
+import com.tal.android.feedback.ui.activities.MyFeedbackActivity
 import com.tal.android.feedback.ui.activities.SquadDetailActivity
 import com.tal.android.feedback.ui.activities.UserProfileActivity
 import com.tal.android.feedback.ui.mvp.model.UserProfileModel
@@ -92,6 +93,15 @@ class UserProfilePresenter(view: UserProfileView, model: UserProfileModel) :
                 Uri.parse(UserProfileModel.SLACK_PROFILE_ADDRESS + model.userProfile?.slackUser)
             ).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         )
+    }
+
+    @Subscribe
+    fun onViewFeedbacksClicked(event: UserProfileView.ViewFeedbacksClickedEvent) {
+        view.activity?.let {
+            it.startActivity(
+                Intent(it, MyFeedbackActivity::class.java)
+            )
+        }
     }
 
     override fun onResume() {

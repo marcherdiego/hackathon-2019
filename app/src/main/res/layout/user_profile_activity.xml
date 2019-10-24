@@ -53,7 +53,23 @@
         android:padding="@dimen/ui_spacing_16"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <include layout="@layout/user_profile_personal_data" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/personal_data"
+                layout="@layout/user_profile_personal_data" />
+
+            <com.tal.android.ui.core.widgets.TalButton
+                android:id="@+id/feedbacks_button"
+                style="@style/Button.Action.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/personal_data"
+                android:layout_marginTop="@dimen/ui_spacing_16"
+                android:text="View Feedbacks" />
+        </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
