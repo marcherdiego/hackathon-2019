@@ -12,6 +12,10 @@ class SquadDetailPresenter(view: SquadDetailView, model: SquadDetailModel) :
 
     @Subscribe
     fun onSquadFetchedSuccessfully(event: SquadDetailModel.SquadFetchedSuccessfullyEvent) {
+        view.loadSquadDetails(
+            "Squad ${event.squadName}",
+            event.squadImageUrl
+        )
         view.setSquadMembersAdapter(SquadMembersAdapter(event.squadMembers))
     }
 

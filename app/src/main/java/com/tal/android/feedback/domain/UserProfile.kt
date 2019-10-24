@@ -19,7 +19,7 @@ class UserProfile : Serializable {
     @SerializedName("position")
     var position: String? = "Backend developer"
 
-    @SerializedName("picture")
+    @SerializedName("picture_url")
     var pictureUrl: String? =
         "https://imagizer.imageshack.com/v2/100x75q90/921/CZe5QU.jpg"
 

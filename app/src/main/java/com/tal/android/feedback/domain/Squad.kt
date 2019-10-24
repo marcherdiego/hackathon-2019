@@ -10,6 +10,9 @@ class Squad : Serializable {
     @SerializedName("name")
     val name: String? = null
 
+    @SerializedName("image_url")
+    val imageUrl: String? = null
+
     @SerializedName("product_owner")
     val productOwner: UserProfile? = null
 

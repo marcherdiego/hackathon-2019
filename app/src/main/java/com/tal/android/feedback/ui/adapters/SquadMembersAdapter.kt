@@ -27,7 +27,7 @@ class SquadMembersAdapter(private val squadMembers: List<UserProfile>) :
         )
     }
 
-    override fun getItemCount() = squadMembers.size
+    override fun getItemCount() = (squadMembers.size - 1) / 2 + 2
 
     override fun getItemViewType(position: Int): Int {
         return if (position == 0 || position == 1) {
@@ -48,22 +48,25 @@ class SquadMembersAdapter(private val squadMembers: List<UserProfile>) :
                 .into(holder.image1)
         } else {
             val firstPosition = 2 * (position - 1)
-            val member = squadMembers[firstPosition]
-            holder.role1.text = member.position
-            holder.name1.text = member.getDisplayName()
-            Picasso
-                .get()
-                .load(member.pictureUrl)
-                .into(holder.image1)
-            val secondPosition = firstPosition + 1
-            if (secondPosition < squadMembers.size) {
-                val member = squadMembers[secondPosition]
-                holder.role2?.text = member.position
-                holder.name2?.text = member.getDisplayName()
+            if (firstPosition < squadMembers.size) {
+                val member = squadMembers[firstPosition]
+                holder.role1.text = member.position
+                holder.name1.text = member.getDisplayName()
                 Picasso
                     .get()
                     .load(member.pictureUrl)
-                    .into(holder.image2)
+                    .into(holder.image1)
+
+                val secondPosition = firstPosition + 1
+                if (secondPosition < squadMembers.size) {
+                    val member = squadMembers[secondPosition]
+                    holder.role2?.text = member.position
+                    holder.name2?.text = member.getDisplayName()
+                    Picasso
+                        .get()
+                        .load(member.pictureUrl)
+                        .into(holder.image2)
+                }
             }
         }
     }

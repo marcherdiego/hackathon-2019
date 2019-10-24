@@ -20,6 +20,8 @@ class SquadDetailModel(private val squadId: Int) : BaseEventsModel() {
                         bus.post(SquadFetchFailedEvent())
                     } else {
                         bus.post(SquadFetchedSuccessfullyEvent(
+                            it.squad.name,
+                            it.squad.imageUrl,
                             mutableListOf<UserProfile>().apply {
                                 it.squad.productOwner?.let { productOwner ->
                                     productOwner.position = "Product Owner"
@@ -42,6 +44,11 @@ class SquadDetailModel(private val squadId: Int) : BaseEventsModel() {
             )
     }
 
-    class SquadFetchedSuccessfullyEvent(val squadMembers: List<UserProfile>)
+    class SquadFetchedSuccessfullyEvent(
+        val squadName: String?,
+        val squadImageUrl: String?,
+        val squadMembers: List<UserProfile>
+    )
+
     class SquadFetchFailedEvent(val error: String? = null)
 }
