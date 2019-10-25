@@ -27,13 +27,16 @@ class UsersAdapter(private val users: List<UserProfile>, private val bus: Bus) :
         val user = users[position]
         holder.name.text = user.getDisplayName()
         holder.email.text = user.email
-        holder.location.text = user.location
         holder.chapter.text = user.chapter?.name
         Picasso
             .get()
             .load(user.pictureUrl)
             .transform(CircleTransform())
             .into(holder.userImage)
+        Picasso
+            .get()
+            .load(user.flagUrl)
+            .into(holder.flagImage)
         holder.itemView.setOnClickListener {
             bus.post(UserClickedEvent(user.id))
         }
@@ -42,8 +45,8 @@ class UsersAdapter(private val users: List<UserProfile>, private val bus: Bus) :
     class ChapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val name: TextView = view.findViewById(R.id.name)
         val email: TextView = view.findViewById(R.id.email)
-        val location: TextView = view.findViewById(R.id.location)
         val chapter: TextView = view.findViewById(R.id.chapter)
+        val flagImage: ImageView = view.findViewById(R.id.flag_image)
         val userImage: ImageView = view.findViewById(R.id.user_image)
     }
 
