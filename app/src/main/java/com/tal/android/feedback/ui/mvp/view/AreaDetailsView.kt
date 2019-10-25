@@ -13,8 +13,12 @@ class AreaDetailsView(activity: BaseActivity<*>) : BaseActivityView(activity) {
         activity.findViewById<View>(R.id.chapters).setOnClickListener {
             bus.post(ChaptersClickedEvent())
         }
+        activity.findViewById<View>(R.id.team).setOnClickListener {
+            bus.post(TeamClickedEvent())
+        }
     }
 
     class SquadsClickedEvent
     class ChaptersClickedEvent
+    class TeamClickedEvent
 }

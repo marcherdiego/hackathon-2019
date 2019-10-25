@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/ui_spacing_16"
+    android:paddingTop="@dimen/ui_spacing_8"
+    android:paddingEnd="@dimen/ui_spacing_16"
+    android:paddingBottom="@dimen/ui_spacing_8">
+
+    <ImageView
+        android:id="@+id/user_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/ui_spacing_8"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/ui_textview_heading_1_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/user_image"
+        android:textStyle="bold"
+        tools:text="Android" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_toEndOf="@+id/user_image"
+        tools:text="panaderoveni@theappraisallane.com" />
+
+    <TextView
+        android:id="@+id/location_label"
+        style="@style/ui_textview_large_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email"
+        android:layout_alignParentEnd="true"
+        android:text="Location" />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location_label"
+        android:layout_alignParentEnd="true"
+        tools:text="Montevideo, Uruguay" />
+
+    <TextView
+        android:id="@+id/chapter_label"
+        style="@style/ui_textview_large_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email"
+        android:layout_toEndOf="@+id/user_image"
+        android:text="Chapter" />
+
+    <TextView
+        android:id="@+id/chapter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chapter_label"
+        android:layout_toEndOf="@+id/user_image"
+        tools:text="IT" />
+
+</RelativeLayout>

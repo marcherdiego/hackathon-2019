@@ -4,13 +4,13 @@ import android.content.Intent
 import com.nerdscorner.mvplib.events.presenter.BaseActivityPresenter
 import com.tal.android.feedback.ui.activities.ChaptersListActivity
 import com.tal.android.feedback.ui.activities.SquadsListActivity
+import com.tal.android.feedback.ui.activities.TeamListActivity
 import com.tal.android.feedback.ui.mvp.model.AreaDetailsModel
 import com.tal.android.feedback.ui.mvp.view.AreaDetailsView
 import org.greenrobot.eventbus.Subscribe
 
 class AreaDetailsPresenter(view: AreaDetailsView, model: AreaDetailsModel) :
     BaseActivityPresenter<AreaDetailsView, AreaDetailsModel>(view, model) {
-
 
     @Subscribe
     fun onSquadsClicked(event: AreaDetailsView.SquadsClickedEvent) {
@@ -26,6 +26,15 @@ class AreaDetailsPresenter(view: AreaDetailsView, model: AreaDetailsModel) :
         view.activity?.let {
             it.startActivity(
                 Intent(it, ChaptersListActivity::class.java)
+            )
+        }
+    }
+
+    @Subscribe
+    fun onTeamClicked(event: AreaDetailsView.TeamClickedEvent) {
+        view.activity?.let {
+            it.startActivity(
+                Intent(it, TeamListActivity::class.java)
             )
         }
     }

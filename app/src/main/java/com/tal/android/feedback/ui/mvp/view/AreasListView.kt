@@ -12,5 +12,4 @@ class AreasListView(activity: BaseActivity<*>) : BaseActivityView(activity) {
     fun setAreasAdapter(adapter: AreasAdapter) {
         areasList.adapter = adapter
     }
-
 }
