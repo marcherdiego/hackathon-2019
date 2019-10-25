@@ -3,15 +3,12 @@ package com.tal.android.feedback.domain
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-class Feedback : Serializable {
-    @SerializedName("id")
-    var id: Int? = null
+class FeedbackRequest : Serializable {
+    @SerializedName("sender_id")
+    var senderId: Int? = null
 
-    @SerializedName("sender")
-    var sender: UserProfile? = null
-
-    @SerializedName("receiver")
-    var receiver: UserProfile? = null
+    @SerializedName("receiver_id")
+    var receiverId: Int? = null
 
     @SerializedName("text")
     var text: String? = null
@@ -20,5 +17,5 @@ class Feedback : Serializable {
     var rating: Int? = null
 
     @SerializedName("category")
-    var category: String? = null
+    var categoryId: Int? = null
 }

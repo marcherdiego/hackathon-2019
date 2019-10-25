@@ -22,6 +22,9 @@ class UserProfile : Serializable {
     @SerializedName("picture_url")
     var pictureUrl: String? = null
 
+    @SerializedName("flag_url")
+    var flagUrl: String? = null
+
     @SerializedName("location")
     var location: String? = "Montevideo, Uruguay"
 

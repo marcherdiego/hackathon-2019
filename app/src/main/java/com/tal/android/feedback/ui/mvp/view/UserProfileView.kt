@@ -12,6 +12,7 @@ import com.tal.android.feedback.R
 
 class UserProfileView(activity: BaseActivity<*>) : BaseActivityView(activity) {
     private val image = activity.findViewById<ImageView>(R.id.user_image)
+    private val flag = activity.findViewById<ImageView>(R.id.flag_image)
     private val jobTitle = activity.findViewById<TextView>(R.id.job_title)
     private val chapter = activity.findViewById<TextView>(R.id.chapter)
     private val currentSquad = activity.findViewById<TextView>(R.id.squad)
@@ -61,6 +62,7 @@ class UserProfileView(activity: BaseActivity<*>) : BaseActivityView(activity) {
         displayName: String?,
         position: String?,
         pictureUrl: String?,
+        flagUrl: String?,
         location: String?,
         timeZone: String?,
         localTime: String?,
@@ -83,6 +85,10 @@ class UserProfileView(activity: BaseActivity<*>) : BaseActivityView(activity) {
             .get()
             .load(pictureUrl)
             .into(image)
+        Picasso
+            .get()
+            .load(flagUrl)
+            .into(flag)
     }
 
     class UserActionButtonButtonClickedEvent

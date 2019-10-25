@@ -10,7 +10,7 @@ import com.tal.android.feedback.R
 import com.tal.android.feedback.domain.Feedback
 import com.tal.android.feedback.ui.adapters.FeedbackAdapter
 
-object FeedbackDialog {
+object ViewFeedbackDialog {
     fun show(context: Context, title: String, feedback: Feedback, type: String) {
         val alertDialog = AlertDialog.Builder(context).create()
         alertDialog.setTitle(title)

@@ -7,6 +7,7 @@ import com.tal.android.feedback.ui.activities.ChapterDetailsActivity
 import com.tal.android.feedback.ui.activities.MyFeedbackActivity
 import com.tal.android.feedback.ui.activities.SquadDetailActivity
 import com.tal.android.feedback.ui.activities.UserProfileActivity
+import com.tal.android.feedback.ui.dialog.SendFeedbackDialog
 import com.tal.android.feedback.ui.mvp.model.UserProfileModel
 import com.tal.android.feedback.ui.mvp.view.UserProfileView
 import org.greenrobot.eventbus.Subscribe
@@ -27,6 +28,7 @@ class UserProfilePresenter(view: UserProfileView, model: UserProfileModel) :
                 getDisplayName(),
                 position,
                 pictureUrl,
+                flagUrl,
                 location,
                 timeZone,
                 model.getUserLocalTime(),
@@ -44,6 +46,11 @@ class UserProfilePresenter(view: UserProfileView, model: UserProfileModel) :
 
     @Subscribe
     fun onUserActionButtonButtonClicked(event: UserProfileView.UserActionButtonButtonClickedEvent) {
+        view.withActivity {
+            model.userProfile?.let {
+                SendFeedbackDialog(this, it, model.getBus())
+            }
+        }
     }
 
     @Subscribe
@@ -102,6 +109,16 @@ class UserProfilePresenter(view: UserProfileView, model: UserProfileModel) :
                 Intent(it, MyFeedbackActivity::class.java)
             )
         }
+    }
+
+    @Subscribe
+    fun onSendFeedbackClicked(event: SendFeedbackDialog.SendFeedbackClickedEvent) {
+        model.sendFeedback(event.feedback.feedback ?: return)
+    }
+
+    @Subscribe
+    fun onFeedbackSentSuccessfully(event: UserProfileModel.FeedbackSentSuccessfullyEvent) {
+        view.showToast("Feedback sent!")
     }
 
     override fun onResume() {

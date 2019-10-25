@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/ui_spacing_8">
+
+    <TextView
+        android:id="@+id/type_label"
+        style="@style/ui_textview_large_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sending feedback to"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/type_owner"
+        style="@style/ui_textview_heading_2_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/type_label"
+        android:textStyle="bold"
+        tools:text="Pablo Cerveñansky" />
+
+    <Spinner
+        android:id="@+id/feedback_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/type_owner"
+        android:layout_marginTop="@dimen/ui_spacing_8"
+        android:paddingTop="@dimen/ui_spacing_8"
+        android:paddingBottom="@dimen/ui_spacing_8" />
+
+    <EditText
+        android:id="@+id/feedback_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/feedback_category"
+        android:layout_marginTop="@dimen/ui_spacing_16"
+        android:ellipsize="end"
+        android:gravity="top"
+        android:hint="Type your feedback here"
+        android:lines="10"
+        android:maxLines="10" />
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/feedback_rating"
+        style="?android:attr/ratingBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/feedback_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/ui_spacing_16"
+        android:numStars="4"
+        android:rating="0"
+        android:stepSize="1" />
+
+    <com.tal.android.ui.core.widgets.TalButton
+        android:id="@+id/send_feedback_button"
+        style="@style/Button.Action.Primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/feedback_rating"
+        android:layout_marginTop="@dimen/ui_spacing_32"
+        android:text="Send Feedback" />
+
+</RelativeLayout>
