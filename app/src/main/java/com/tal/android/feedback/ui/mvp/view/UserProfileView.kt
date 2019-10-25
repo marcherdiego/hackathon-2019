@@ -9,6 +9,7 @@ import com.nerdscorner.mvplib.events.activity.BaseActivity
 import com.nerdscorner.mvplib.events.view.BaseActivityView
 import com.squareup.picasso.Picasso
 import com.tal.android.feedback.R
+import com.tal.android.ui.core.widgets.TalButton
 
 class UserProfileView(activity: BaseActivity<*>) : BaseActivityView(activity) {
     private val image = activity.findViewById<ImageView>(R.id.user_image)
@@ -22,7 +23,9 @@ class UserProfileView(activity: BaseActivity<*>) : BaseActivityView(activity) {
     private val localTime = activity.findViewById<TextView>(R.id.local_time)
     private val userLeader = activity.findViewById<TextView>(R.id.leader)
     private val slackUser = activity.findViewById<TextView>(R.id.slack)
-    private val collapsingToolbar: CollapsingToolbarLayout = activity.findViewById(R.id.collapsing_toolbar)
+    private val collapsingToolbar: CollapsingToolbarLayout =
+        activity.findViewById(R.id.collapsing_toolbar)
+    private val feedbackButton: TalButton = activity.findViewById(R.id.feedbacks_button)
     private val actionButton = activity.findViewById<FloatingActionButton>(R.id.fab)
 
     init {
@@ -44,7 +47,7 @@ class UserProfileView(activity: BaseActivity<*>) : BaseActivityView(activity) {
         activity.findViewById<View>(R.id.slack_container).setOnClickListener {
             bus.post(UserSlackClickedEvent())
         }
-        activity.findViewById<View>(R.id.feedbacks_button).setOnClickListener {
+        feedbackButton.setOnClickListener {
             bus.post(ViewFeedbacksClickedEvent())
         }
     }
@@ -89,6 +92,14 @@ class UserProfileView(activity: BaseActivity<*>) : BaseActivityView(activity) {
             .get()
             .load(flagUrl)
             .into(flag)
+    }
+
+    fun hideViewFeedbackButton() {
+        feedbackButton.visibility = View.GONE
+    }
+
+    fun showViewFeedbackButton() {
+        feedbackButton.visibility = View.VISIBLE
     }
 
     class UserActionButtonButtonClickedEvent

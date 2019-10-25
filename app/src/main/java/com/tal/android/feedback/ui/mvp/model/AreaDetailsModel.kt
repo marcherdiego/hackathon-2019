@@ -2,4 +2,4 @@ package com.tal.android.feedback.ui.mvp.model
 
 import com.nerdscorner.mvplib.events.model.BaseEventsModel
 
-class WorkAreaModel : BaseEventsModel()
+class AreaDetailsModel(private val areaId: Int) : BaseEventsModel()

@@ -12,15 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-		<activity android:name="com.tal.android.feedback.ui.activities.MyFeedbackActivity">
+		<activity android:name="com.tal.android.feedback.ui.activities.AreaDetailsActivity">
 		</activity>
-		<activity android:name="com.tal.android.feedback.ui.activities.ChapterDetailsActivity">
-		</activity>
-		<activity android:name="com.tal.android.feedback.ui.activities.ChaptersListActivity">
-		</activity>
-		<activity android:name="com.tal.android.feedback.ui.activities.SquadDetailActivity">
-		</activity>
-		<activity android:name="com.tal.android.feedback.ui.activities.SquadsListActivity">
+		<activity android:name="com.tal.android.feedback.ui.activities.AreaDetailsActivity">
 		</activity>
         <activity
             android:name="com.tal.android.feedback.ui.activities.MainActivity"
@@ -32,10 +26,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.tal.android.feedback.ui.activities.UserProfileActivity"
+            android:name="com.tal.android.feedback.ui.activities.AreasListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.tal.android.feedback.ui.activities.WorkAreaActivity"
+            android:name="com.tal.android.feedback.ui.activities.MyFeedbackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tal.android.feedback.ui.activities.ChapterDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tal.android.feedback.ui.activities.ChaptersListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tal.android.feedback.ui.activities.SquadDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tal.android.feedback.ui.activities.SquadsListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tal.android.feedback.ui.activities.UserProfileActivity"
             android:screenOrientation="portrait" />
     </application>
 </manifest>

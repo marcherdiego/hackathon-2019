@@ -18,6 +18,7 @@ class UserProfilePresenter(view: UserProfileView, model: UserProfileModel) :
 
     init {
         view.hideFab()
+        view.hideViewFeedbackButton()
     }
 
     @Subscribe
@@ -41,6 +42,8 @@ class UserProfilePresenter(view: UserProfileView, model: UserProfileModel) :
         if (model.isMyUser().not()) {
             //If it's not my profile, show the FAB
             view.showFab()
+        } else {
+            view.showViewFeedbackButton()
         }
     }
 
