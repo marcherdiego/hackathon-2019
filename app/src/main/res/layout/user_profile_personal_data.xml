@@ -20,7 +20,7 @@
 
         <TextView
             android:id="@+id/job_title"
-            style="@style/ui_textview_normal_regular_black"
+            style="@style/ui_textview_normal_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/job_title_label"
@@ -48,7 +48,7 @@
 
         <TextView
             android:id="@+id/chapter"
-            style="@style/ui_textview_normal_regular_black"
+            style="@style/ui_textview_normal_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/chapter_label"
@@ -78,7 +78,7 @@
 
         <TextView
             android:id="@+id/squad"
-            style="@style/ui_textview_normal_regular_black"
+            style="@style/ui_textview_normal_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/squad_label"
@@ -106,7 +106,7 @@
 
         <TextView
             android:id="@+id/email"
-            style="@style/ui_textview_normal_regular_black"
+            style="@style/ui_textview_normal_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/email_label"
@@ -133,7 +133,7 @@
 
         <TextView
             android:id="@+id/location"
-            style="@style/ui_textview_normal_regular_black"
+            style="@style/ui_textview_normal_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/location_label"
@@ -161,7 +161,7 @@
 
         <TextView
             android:id="@+id/timezone"
-            style="@style/ui_textview_normal_regular_black"
+            style="@style/ui_textview_normal_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/timezone_label"
@@ -187,7 +187,7 @@
 
         <TextView
             android:id="@+id/local_time"
-            style="@style/ui_textview_normal_regular_black"
+            style="@style/ui_textview_normal_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/local_time_label"
@@ -215,7 +215,7 @@
 
         <TextView
             android:id="@+id/leader"
-            style="@style/ui_textview_normal_regular_black"
+            style="@style/ui_textview_normal_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/leader_label"
@@ -248,7 +248,7 @@
 
             <TextView
                 android:id="@+id/slack"
-                style="@style/ui_textview_normal_regular_black"
+                style="@style/ui_textview_normal_black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/slack_label"
